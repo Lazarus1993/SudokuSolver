@@ -6,12 +6,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.NumberFormatter;
 
 
 @WebServlet("/SudokuServlet")
 public class SudokuServlet extends HttpServlet{
 	  private static final int N = 9;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		long startTime = System.nanoTime();
 		int matrix [][] = new int[9][9];
 		
 		System.out.println(request.getParameter(1+","+1));
@@ -36,6 +38,11 @@ public class SudokuServlet extends HttpServlet{
 	        } else {
 	            System.out.println("Sudoku can't be solved");
 	        }
+		 long endTime   = System.nanoTime();
+		 long totalTime = endTime - startTime;
+		
+		 System.out.println(totalTime);
+		 request.setAttribute("totalTime", (double)totalTime/Math.pow(10,6));
 		 
 		 for(int i=0;i<N;i++)
 			 for(int j=0;j<N;j++)

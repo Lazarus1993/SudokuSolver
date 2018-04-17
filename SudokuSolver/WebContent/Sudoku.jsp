@@ -36,6 +36,7 @@ Sudoku Question:
 </head>
 
 <body>
+<div style="width:800px; margin:0 auto;">
     <form action="SudokuServlet" method="POST" id="SudokuChallenge">
 <table>
 <colgroup><col><col><col>
@@ -61,7 +62,9 @@ Sudoku Question:
     </table>
         <input type="submit" value="Solve it">
     </form>
+    
     <button onclick="worstCase()">Populate worst case</button>
     <button onclick="bestCase()">Populate best case</button>
+    </div>
 </body>
 </html>

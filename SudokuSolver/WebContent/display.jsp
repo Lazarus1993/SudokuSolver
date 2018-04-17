@@ -7,8 +7,10 @@
 <link rel="stylesheet" type="text/css" href="sudoku.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sudoku Solution</title>
+
 Sudoku Solution:
 </head>
+<div style="width:800px; margin:0 auto;">
 <table>
 <colgroup><col><col><col>
   <colgroup><col><col><col>
@@ -26,6 +28,8 @@ if(i%3 == 0) {%>
 	</tr>
 <% } %>
 </table>
+The runtime is: <%=request.getAttribute("totalTime")%> ms
+</div>
 <body>
 </body>
 </html>
